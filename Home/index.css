@@ -1,0 +1,133 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+body{
+    background-color:#d21a1a;
+    height: 100%;
+    width: 100%;
+}
+header{
+    margin-left: 30px;
+    margin-top: 20px;
+}
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content:  space-between;
+}
+
+form{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+form input{
+    width: 500px;
+    height: 40px;
+    border: black 5px solid;
+    border-radius: 10px;
+}
+form button{
+    width: 80px;
+    height: 40px;
+    border: black 5px solid;
+    border-radius: 10px;
+}
+
+form #container-pokes{
+    margin-top: 10px;
+    border: black 5px solid;
+    border-radius: 10px;
+    background-color: #d2c9c4;
+}
+form ul{
+    overflow-y: auto;
+    max-height: 700px;
+    overflow-x: hidden;
+    padding: 16px 24px;
+}
+
+form ul::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+
+form ul::-webkit-scrollbar-track {
+    background: #d2c9c4;
+  }
+  
+
+form ul::-webkit-scrollbar-thumb {
+    background: rgb(179, 174, 174);
+  }
+  
+
+
+
+
+form ul .pokecard{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 10px 0;
+    border-radius: 8px;
+    padding: 10px 10px;
+    background-color: orange;
+  
+}
+
+form ul .pokecard h2{
+    font-size: 32px;
+    color: white;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+form ul .pokecard .pokeinfo span{
+    background-color: red;
+    padding: 3px 9px;
+    color: white;
+    font-size: 20px;
+    border:none;
+    border-radius: 5px;
+    margin-right: 20px;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+
+form ul .pokeinfo{
+    margin-right: 200px;
+    padding-left: 20px;
+
+}
+
+form ul .pokeinfo p{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+}
+
+form ul  img{
+    width: 300px;
+    height: 200px;
+    max-width: 300px;
+}
+#background-pokemon{
+    position: relative;
+}
+#background-pokemon .imagepoke{
+   position: absolute;
+   transform: translate(-50%, -50%);
+   top: 50%;
+   left: 50%;
+    
+}
