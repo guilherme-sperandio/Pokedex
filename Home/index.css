@@ -31,14 +31,26 @@ form{
 form input{
     width: 500px;
     height: 40px;
+    font-size: 16px;
+    font-weight: 400;
     border: black 5px solid;
     border-radius: 10px;
+    padding-left: 10px;
+}
+form input::placeholder{
+    font-size: 16px ;
 }
 form button{
     width: 80px;
     height: 40px;
+    margin-left: 5px;
     border: black 5px solid;
     border-radius: 10px;
+    transition: 1s;
+}
+form button:hover{
+    background-color: black;
+    color: white;
 }
 
 form #container-pokes{
@@ -46,13 +58,17 @@ form #container-pokes{
     border: black 5px solid;
     border-radius: 10px;
     background-color: #d2c9c4;
+    min-width: 750px;
+    max-width: 750px
 }
 form ul{
     overflow-y: auto;
-    max-height: 700px;
+    max-height: 800px;
     overflow-x: hidden;
-    padding: 16px 24px;
+    padding: 0px 10px;
+ 
 }
+
 
 form ul::-webkit-scrollbar {
     width: 5px;
@@ -80,6 +96,7 @@ form ul .pokecard{
     border-radius: 8px;
     padding: 10px 10px;
     background-color: orange;
+    
   
 }
 
@@ -99,7 +116,8 @@ form ul .pokecard .pokeinfo span{
     border-radius: 5px;
     margin-right: 20px;
     text-transform: capitalize;
-    display: inline-block;
+    
+  
 }
 
 
@@ -117,7 +135,7 @@ form ul .pokeinfo p{
 }
 
 form ul  img{
-    width: 300px;
+    min-width: 300px;
     height: 200px;
     max-width: 300px;
 }
@@ -129,5 +147,13 @@ form ul  img{
    transform: translate(-50%, -50%);
    top: 50%;
    left: 50%;
-    
+   min-width: 300px;
+   height: 200px;
+   max-width: 300px;   
 }
+
+form ul a{
+    text-decoration: none;
+    color: black;
+}
+
