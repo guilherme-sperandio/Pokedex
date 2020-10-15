@@ -26,6 +26,7 @@ main{
 form{
     margin-left: 30px;
     margin-top: 10px;
+   
 }
 
 form input{
@@ -63,10 +64,10 @@ form #container-pokes{
 }
 form ul{
     overflow-y: auto;
-    max-height: 800px;
+    max-height: 850px;
     overflow-x: hidden;
     padding: 0px 10px;
- 
+    visibility: hidden;
 }
 
 
@@ -116,7 +117,7 @@ form ul .pokecard .pokeinfo span{
     border-radius: 5px;
     margin-right: 20px;
     text-transform: capitalize;
-    
+
   
 }
 
@@ -157,3 +158,24 @@ form ul a{
     color: black;
 }
 
+#load{
+    
+    position: absolute;
+    left: 950px;
+    top: 500px;
+    z-index: 10;
+    visibility: hidden;
+    transition: visibility 1s ;
+    
+}
+#load img{
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+#load-info{
+    margin-top: 10px;
+}

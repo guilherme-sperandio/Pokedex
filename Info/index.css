@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+body{
+    background-color:#d21a1a;
+    height: 100%;
+    width: 100%;
+}
+main #principal{
+    display: flex;
+    margin: 65px;
+    background-color: #f5ac78;
+}
+
+main #principal img{
+    padding:0px 20px;
+    border: black 1px solid;
+    margin-left: 10px;
+}
+
+main #principal .pokeinfo{
+    margin-left: 400px;
+}
+
+main #principal .pokeinfo p{
+    font-size: 30px;
+    padding: 5px;
+
+}

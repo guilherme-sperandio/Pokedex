@@ -1,12 +1,14 @@
-const teste = document.querySelector("#jorge");
+const teste = document.querySelector("#ul");
+
 
 window.addEventListener('load', () => {
-    teste1();
+    carregaTodos();
 });
 
 function onSubmit(event){
   
     event.preventDefault();
+   
     var inputpoke = document.querySelector("input").value;
     fetch(`https://pokeapi.co/api/v2/pokemon/${inputpoke}`)
         .then(response =>{
@@ -14,9 +16,12 @@ function onSubmit(event){
     })
         .then(data => {
         console.log(data);
-        const ul = document.querySelector("#jorge");
-        const lis = document.querySelectorAll("#jorge li");
+        const ul = document.querySelector("#ul");
+        const ul1 = document.querySelector("#ul");
+        const lis = document.querySelectorAll("#ul li");
+        
         const pokemonArr = [...lis];
+        
         pokemonArr.map((pokemon)=>{
             return pokemon.remove()
         });
@@ -69,6 +74,7 @@ function onSubmit(event){
         link.appendChild(newPoke);
 
         ul.appendChild(link);
+        console.log(ul);
 
         const checkImage = document.querySelector(".imagepoke");
         if(checkImage){
@@ -118,7 +124,7 @@ function onSubmit(event){
 
 
 function changeColor(type,typePoke,newPoke){
-    console.log(type);
+
     switch(type){
         case 'grass':
             newPoke.style.backgroundColor = "#63bb5b";
@@ -243,7 +249,7 @@ function changeColorSpan(type,typePoke){
         break;
         case 'fire':
             
-            typePoke.style.backgroundColor = "##f5ac78"; 
+            typePoke.style.backgroundColor = "#f5ac78"; 
         break;
         case 'water':
             
@@ -278,85 +284,141 @@ function changeColorSpan(type,typePoke){
 }
 
 
+
+
 let global = 0;
-function teste1(){
+var arrPoke = [];
+var newArrPoke = [];
+
+function carregaTodos(){
     var x = 0 ;
-    //for(x=1; x < 650; x++){
-            fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${global}&limit=20`)
-            .then(response =>{
-            return response.json()
-        })
-            .then(data => {
-                console.log(data);
-           
-            for(x =0 ; x <20 ; x++){
-                const url = data.results[x].url;
-                fetch(url)
-                .then(response => {
-                    return response.json()
-                })
-                .then (data => {
-                    const ul = document.querySelector("#jorge");
-                    const newPoke = document.createElement("li");
-                    newPoke.className = "pokecard";
-                    const link = document.createElement("a");
-                    link.setAttribute('href', "https://www.google.com.br/");
-                    const newPokediv = document.createElement("div");
-                    newPokediv.className = "pokeinfo";
-                    const idPoke = document.createElement("p");
-                    idPoke.innerText = data.id;
-                    const namePoke = document.createElement("h2");
-                    namePoke.innerText = data.name;
+    var y = 1;
+    var teste = 20;
 
-
-                    newPokediv.appendChild(idPoke);
-                    newPokediv.appendChild(namePoke);
-
-                    var i = 0;
-                    data.types.map((currentType)=> {
-                    const typePoke = document.createElement("span");
-                    typePoke.innerText = currentType.type.name;
-                    newPokediv.appendChild(typePoke);
-                    if(i == 0 ){
-                        changeColor(currentType.type.name,typePoke,newPoke);
-                        i = i+ 1;
-                    }
-                    else {
-                        changeColorSpan(currentType.type.name,typePoke);
-                    }
-                    
-                    return currentType.type.name
-                });
-                const imagePoke = document.createElement("img");
+        const load = document.querySelector("#load");
+        load.style.visibility = "visible";
+        
+                fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${global}&limit=20`)
+                .then(response =>{
+                return response.json()
+            })
+                .then(data => {
+                  
+                try{
+                    for(x =0 ; x <20; x++){
+                 
+                        const url = data.results[x].url;
+                        fetch(url)
+                        .then(response => {
+                            return response.json()
+                        })
+                        .then (data => {
+                            
+                            arrPoke.push(data);
+                            newArrPoke= arrPoke.sort(function(a, b){return a.id - b.id});
+                          
+                            if(y == teste){
+                                ;
+                                insereTeste(newArrPoke);
+                                teste = teste + 20;
+                            }
+                            else{
+                                y++;
+                            };
+                       
+                            return data;
+                        });
+                       
+                     }; 
+                } 
+                catch{
+                    load.style.visibility = "hidden"; 
+                };
                 
                 
-                imagePoke.setAttribute('src', `../assets/pokemon/${data.id}.svg`);
-
-                newPoke.appendChild(newPokediv);
-
-            if(data.id < 650){
-
-                newPoke.appendChild(imagePoke);
-            }
-          
-            link.appendChild(newPoke);
-
-            ul.appendChild(link);
+                 
+             });
+        global +=20; 
                 
-                return data;
-            });
+      
+ 
+} ;
 
-        };
+
+// scroll infinito
+teste.addEventListener('scroll', function() {
+  
+    if (teste.scrollTop + teste.clientHeight > teste.scrollHeight) {
        
-            
-    });
-         global +=20;   
-
-}
+        carregaTodos();
+    }
+  });
 
 
+  /////
+  /////
+  let soma = 0;
+  function insereTeste(newArrPoke){
+    const load = document.querySelector("#load");
+    
+        var x  ;
+        for(x= soma;x<newArrPoke.length;x++){
+           const ul = document.querySelector("#ul");
+           const newPoke = document.createElement("li");
+           newPoke.className = "pokecard";
+           const link = document.createElement("a");
+           link.setAttribute('href', `../Info/index.html?id=${newArrPoke[x].id}`);
+           const newPokediv = document.createElement("div");
+           newPokediv.className = "pokeinfo";
+           const idPoke = document.createElement("p");
+           idPoke.innerText = newArrPoke[x].id;
+           const namePoke = document.createElement("h2");
+           namePoke.innerText = newArrPoke[x].name;
 
 
+           newPokediv.appendChild(idPoke);
+           newPokediv.appendChild(namePoke);
+
+           var i = 0;
+           newArrPoke[x].types.map((currentType)=> {
+               const typePoke = document.createElement("span");
+               typePoke.innerText = currentType.type.name;
+               newPokediv.appendChild(typePoke);
+               if(i == 0 ){
+                   changeColor(currentType.type.name,typePoke,newPoke);
+                   i = i+ 1;
+               }
+               else {
+                   changeColorSpan(currentType.type.name,typePoke);
+               }
+                       
+               return currentType.type.name
+           });
+               
+           const imagePoke = document.createElement("img");
+           imagePoke.setAttribute('src', `../assets/pokemon/${newArrPoke[x].id}.svg`);
+           newPoke.appendChild(newPokediv);
+
+           if(newArrPoke[x].id < 650){
+               newPoke.appendChild(imagePoke);
+           }
+          
+
+           link.appendChild(newPoke);
+          
+           ul.appendChild(link);
+           load.style.visibility = "hidden";
+           ul.style.visibility = "visible"
+           
+
+       }  
+       console.log("teste");
+       load.style.visibility = "hidden";
+       soma = soma + 20;
+                   
+ };
+
+       
 
 
 
