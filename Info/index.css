@@ -9,25 +9,267 @@ body{
     background-color:#d21a1a;
     height: 100%;
     width: 100%;
+   
 }
-main #principal{
+#pokeheader{
     display: flex;
-    margin: 65px;
-    background-color: #f5ac78;
+    justify-content: center;
+}
+#pokeheader .principal{
+    display: flex;
+    margin-top: 65px;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border-radius: 10px;
+    width: 800px;
+    max-width: 800px;
+    
 }
 
-main #principal img{
-    padding:0px 20px;
-    border: black 1px solid;
+#pokeheader .principal img{
+    padding: 0px 20px;
+    margin-left: 10px;
+    min-width: 300px;
+    height: 200px;
+    max-width: 300px;
+}
+
+#pokeheader .principal .pokeinfo{
+    margin-left: 400px;
+    margin-right: 50px;
+    position: relative;
+    right: 200px;
+}
+
+#pokeheader .principal .pokeinfo p{
+    font-size: 30px;
+    padding: 5px;
+    margin-top: 10px;
     margin-left: 10px;
 }
 
-main #principal .pokeinfo{
-    margin-left: 400px;
+#pokeheader .principal .pokeinfo h1{
+    font-size: 32px;
+    margin-left: 10px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: white;
+    text-transform: capitalize;
 }
 
-main #principal .pokeinfo p{
-    font-size: 30px;
+#pokeheader .principal .pokeinfo span{
+    font-size: 24px;
     padding: 5px;
+    color: white;
+    background-color: red;
+    border-radius: 8px;
+    margin-left: 10px;
+    text-transform: capitalize;
+    
+  
+}
 
+.nav-tabs{
+    width: 1500px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+
+}
+
+.nav-tabs ul{
+    list-style: none;
+}
+
+.nav-tabs ul li{
+    float: left;
+    
+}
+
+.nav-tabs label{
+    font-size: 28px;
+    width: 500px;
+    padding: 25px;
+    background-color: #ff4040 ;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.rd-tabs:checked ~ label{
+    background-color: gray;
+}
+
+.rd-tabs{
+    display: none;
+}
+
+.content{
+    border-top: 5px solid gray;
+    background-color: #d2c9c4;
+    display: none;
+    position: absolute;
+    height: 600px;
+    width: 1500px;
+    left: 0;
+}
+
+.rd-tabs:checked ~ .content{
+    display: block;
+}
+
+.content article{
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 590px ; 
+}
+.content article::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+
+.content article::-webkit-scrollbar-track {
+    background: #d2c9c4;
+  }
+  
+
+.content article::-webkit-scrollbar-thumb {
+    background: rgb(179, 174, 174);
+  }
+
+.content .pokecard{
+    padding: 10px;
+    display: flex;
+    margin-top: 20px;
+    background-color:  #f5ac78;
+}
+
+.content .pokecard img{
+    margin-left: 40px;
+}
+
+.content .pokecard article{
+    margin-left: 150px;
+}
+
+.content .pokecard article p{
+    font-size: 28px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.content .pokecard article h1{
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.content .pokecard article span{
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    background-color:red ;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.content #habilidades h1{
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.content #habilidades .span {
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.content #habilidades .span p{
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    text-transform: none;
+}
+
+.content #peso-alt span{
+    font-size: 26px;
+    padding: 10px;
+    
+}
+.content #peso-alt h2{
+    padding: 2px;
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+
+
+.content #status h1{
+    font-size: 32px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.content #status .info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content #status .info span{
+    font-size: 24px;
+    padding: 5px;
+    font-weight: bold;
+}
+.content #status .info p{
+    font-size: 24px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.content #status .info img{
+    width:  40px;
+    height: 40px;
+    position: relative;
+    right: 1000px;
+    
+}
+
+
+#load{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    visibility: hidden;
+    transition: visibility 1s ;
+    background-color: gray ;
+    opacity: 0.95;
+    
+}
+#load img{
+    animation: spin 2s linear infinite;
+    position: relative;
+    margin-left: 900px;
+    margin-top: 500px;
+    
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+#load-info{
+    margin-top: 10px;
+    position: relative;
+   margin-left: 900px;
+    
 }

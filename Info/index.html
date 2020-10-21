@@ -4,29 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="../assets/psyduck.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <title>Pokedex</title>
 </head>
+
 <body>
+    <div id= "load">
+        <img src="../assets/pokeball.png" alt="loader">
+        <div id="load-info">
+            <h2>Carregando</h2>
+        </div>
+    </div>
+    
+
+    <div id="pokeheader">
+        
+    </div>
+    
     <main>
-        <div id="principal">
-            <img src="../assets/charmander.svg" alt="">
-            <div class="pokeinfo">
-                <p>4</p>
-                <h1> Charmander </h1>
-                <span>fuego</span>
-            </div>
-        </div>
 
-        <div id="info">
-
-        </div>
+        <nav class="nav-tabs">
+            <ul>
+                <li>
+                    <input type="radio" name="tabs" class="rd-tabs" id="tab1" checked>
+                    <label for="tab1">About</label>
+                    <div class="content">
+                        <article>
+                          
+                            <div id="habilidades">
+                               
+                            </div>
+    
+                            <div id="peso-alt">
+                            
+                             </div>
+                            
+                        </article>
+                    </div>
+                </li>
+                <li>
+                    <input type="radio" name="tabs" class="rd-tabs" id="tab2">
+                    <label for="tab2">Stats</label>
+                    <div class="content">
+                        <article>
+                            <div id= "status">
+                                <h1>Status</h1>
+                            </div>
+                        
+                        </article>
+                    </div>
+                </li>
+                <li>
+                    <input type="radio" name="tabs" class="rd-tabs" id="tab3">
+                    <label for="tab3">Evolution</label>
+                    <div class="content">
+                        <div class="pokecard">
+                            <img src="../assets/charmander.svg" alt="">
+                            <article>
+                                <p>4</p>
+                                <h1>Charmarder</h1>
+                                <span>Fuego</span>
+                            </article>
+                        </div>
+                        <div class="pokecard">
+                            <img src="../assets/charmander.svg" alt="">
+                            <article>
+                                <p>4</p>
+                                <h1>Charmarder</h1>
+                                <span>Fuego</span>
+                            </article>
+                        </div>
+                       
+                    </div>
+                </li>
+            </ul>
+        </nav>
 
 
     </main>
 
-
-
     <script src="index.js"></script>
+    <script src="about.js"></script>
+    <script src="stats.js"></script>
+    <script src="evolution.js"></script>
+    <script src="../Home/changeCollor.js"></script>
 </body>
 </html>
