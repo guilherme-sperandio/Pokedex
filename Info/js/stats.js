@@ -15,7 +15,9 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${idPoke}`)
         const divStatus = document.createElement("div");
         const img = document.createElement("img");
         const span = document.createElement("span");
-        span.innerText = stat.stat.name;
+        let nameStat =stat.stat.name;
+        nameStat = nameStat.charAt(0).toUpperCase() + nameStat.slice(1);  
+        span.innerText = nameStat;
         const p = document.createElement("p");
         p.innerText = stat.base_stat;
        

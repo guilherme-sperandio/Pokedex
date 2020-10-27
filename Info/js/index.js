@@ -34,10 +34,13 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${idPoke}`)
         data.types.map((currentType)=> {
             
             const typePoke = document.createElement("span");
-            typePoke.innerText = currentType.type.name;
+            let upperCase = currentType.type.name;
+            upperCase = upperCase.charAt(0).toUpperCase() + upperCase.slice(1);
+            typePoke.innerText= upperCase;
             divInfo.appendChild(typePoke);
             if(i == 0 ){
-                changeColor(currentType.type.name,typePoke,divPrincipal);
+                changeColor(currentType.type.name,divPrincipal);
+                changeColorSpan(currentType.type.name,typePoke);
                 i = i+ 1;
             }
             else {

@@ -23,6 +23,7 @@ body{
     border-radius: 10px;
     width: 800px;
     max-width: 800px;
+    box-shadow: 10px 7px 5px rgba(0, 0, 0, 0.5);  
     
 }
 
@@ -250,7 +251,7 @@ body{
     height: 100%;
     z-index: 10;
     visibility: hidden;
-    transition: visibility 1s ;
+    transition: visibility 3s ;
     background-color: gray ;
     opacity: 0.95;
     

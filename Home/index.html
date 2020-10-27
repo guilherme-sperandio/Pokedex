@@ -17,15 +17,16 @@
         <img src="/assets/pokeball.png" alt="loader">
         <div id="load-info">
             <h2>Carregando</h2>
+        </div>
     </div>
-        
+    <div id= "error">
+        <a onclick="closeError()">X</a>
     </div>
+    
     <main>
         <form onsubmit="onSubmit(event)">
             <input type="text" name="" id="" placeholder="Insira o nome do Poke ou o seu ID">
-                <button type="submit" >
-                    pesquisar
-                </button>
+           
             <div id="container-pokes">
                 <ul id="ul" >
                 </ul>
@@ -38,7 +39,11 @@
             
         </div>
     </main>
-    <script src="index.js"></script>
-    <script src="changeCollor.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/changeCollor.js"></script>
+    <script src="./js/error.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/infiniteScroll.js"></script>
+    <script src="./js/ordena.js"></script>
 </body>
 </html>

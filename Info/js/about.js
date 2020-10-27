@@ -16,29 +16,41 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${idPoke}`)
     
     divMain.appendChild(h1);
     h1.innerText = "Skills";
-    
-
-    data.abilities.map((ability) =>{
+    console.log(data);
+    if(data.abilities.length == 0 ){
         const habilidade = document.createElement("span");
         habilidade.className = "span";
-        habilidade.innerText = ability.ability.name;
-
-        fetch(ability.ability.url)
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            data.effect_entries.map((effects) => {
-                const p = document.createElement("p");
-                p.innerText = effects.effect;
-                habilidade.appendChild(p);
-            });;
-        }); 
-
+        habilidade.innerText = "Não foi encontrado informação sobre as habilidades do Pokemon acima";
         divMain.appendChild(habilidade);
-        
-    });
+    }
+    else{
+        data.abilities.map((ability) =>{
+       
+            const habilidade = document.createElement("span");
+            habilidade.className = "span";
+           
+            habilidade.innerText = ability.ability.name;
+            
+            
     
+            fetch(ability.ability.url)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                data.effect_entries.map((effects) => {
+                    
+                    const p = document.createElement("p");
+                    p.innerText = effects.effect;
+                    habilidade.appendChild(p);
+                });;
+            }); 
+    
+            divMain.appendChild(habilidade);
+            
+        });
+    }
+
     height.innerText = "Height"
     const spanHeight = document.createElement("span");
     spanHeight.innerText = data.height
