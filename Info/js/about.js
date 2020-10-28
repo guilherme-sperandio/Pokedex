@@ -16,7 +16,6 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${idPoke}`)
     
     divMain.appendChild(h1);
     h1.innerText = "Skills";
-    console.log(data);
     if(data.abilities.length == 0 ){
         const habilidade = document.createElement("span");
         habilidade.className = "span";

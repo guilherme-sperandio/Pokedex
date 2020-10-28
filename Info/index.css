@@ -27,6 +27,7 @@ body{
     
 }
 
+
 #pokeheader .principal img{
     padding: 0px 20px;
     margin-left: 10px;
@@ -127,6 +128,25 @@ body{
     overflow-y: auto;
     max-height: 590px ; 
 }
+.content #principal {
+    overflow-y: auto;
+    max-height: 590px ; 
+}
+.content #principal::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+
+.content#principal::-webkit-scrollbar-track {
+    background: #d2c9c4;
+  }
+  
+
+.content #principal::-webkit-scrollbar-thumb {
+    background: rgb(179, 174, 174);
+  }
+
+
 .content article::-webkit-scrollbar {
     width: 5px;
   }
@@ -141,6 +161,10 @@ body{
     background: rgb(179, 174, 174);
   }
 
+.content  a{
+    text-decoration: none;
+    color: black;
+}
 .content .pokecard{
     padding: 10px;
     display: flex;
@@ -150,6 +174,7 @@ body{
 
 .content .pokecard img{
     margin-left: 40px;
+    max-width: 200px;
 }
 
 .content .pokecard article{
@@ -160,6 +185,7 @@ body{
     font-size: 28px;
     margin-bottom: 15px;
     padding: 5px;
+    margin-left: 10px;
 }
 
 .content .pokecard article h1{
@@ -168,16 +194,19 @@ body{
     font-weight: bold;
     padding: 5px;
     margin-bottom: 20px;
+    margin-left: 10px;
+    text-transform: capitalize;
 }
 
 .content .pokecard article span{
     font-size: 24px;
     color: white;
-    font-weight: bold;
     background-color:red ;
     padding: 5px;
     border-radius: 8px;
+    margin-left: 10px;
 }
+
 
 .content #habilidades h1{
     font-size: 32px;
