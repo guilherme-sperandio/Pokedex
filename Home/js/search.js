@@ -1,11 +1,13 @@
 function onSubmit(event){
     event.preventDefault();
     var inputpoke = document.querySelector("input").value;
+    let lowCase = inputpoke;
+    lowCase = lowCase.charAt(0).toLowerCase() + lowCase.slice(1);
     if(inputpoke.length == 0){
         showError(inputpoke.length,1);
     }
     else{
-        fetch(`https://pokeapi.co/api/v2/pokemon/${inputpoke}`)
+        fetch(`https://pokeapi.co/api/v2/pokemon/${lowCase}`)
         .then(response =>{
             if(response.status == 404){
                 return;

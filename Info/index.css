@@ -207,6 +207,39 @@ body{
     margin-left: 10px;
 }
 
+.content #message-evo{
+    margin-left: 480px;
+    margin-top: 150px;
+    background-color: gray;
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 12px 7px 5px rgba(0, 0, 0, 0.5);  
+    opacity: 0.95;
+    display:none;
+}
+.content #message-evo h1{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.content #message-evo p{
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.content #message-evo img{
+    width: 100px;
+    height: 100px;
+    margin-left: 200px;
+    margin-top: 20px;
+
+}
+
 
 .content #habilidades h1{
     font-size: 32px;

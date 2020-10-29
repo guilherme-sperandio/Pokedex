@@ -33,6 +33,6 @@ function verificaEvo(pokeName, pokeArr){
             
         }
     }
-    
+    console.log(pokeArr[0]);
     incluiPoke(pokeArr[0]);
 }
