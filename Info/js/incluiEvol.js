@@ -1,5 +1,6 @@
 
 const messageEvolution = document.querySelector("#message-evo");
+
 function incluiPoke(pokeArr){
     console.log(pokeArr);
     if(pokeArr == "Vaporeon/Jolteon/Flareon/Espeon/Umbreon/Leafeon/Glaceon/Sylveon" || pokeArr == "Slowbro/Slowking"){
