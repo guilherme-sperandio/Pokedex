@@ -1,8 +1,10 @@
+
 function onSubmit(event){
     event.preventDefault();
     var inputpoke = document.querySelector("input").value;
     let lowCase = inputpoke;
-    lowCase = lowCase.charAt(0).toLowerCase() + lowCase.slice(1);
+    lowCase = lowCase.toLowerCase();
+    console.log(lowCase);
     if(inputpoke.length == 0){
         showError(inputpoke.length,1);
     }
@@ -16,15 +18,21 @@ function onSubmit(event){
          
         })
         .then(data => {
+            
             if(data == undefined){
                 showError(inputpoke.length,data);
                 document.querySelector("input").value = "";
             }
             else{
+                const back = document.querySelector("#back");
+                back.style.visibility = "visible";
+                const load = document.querySelector("#load");
+                load.style.visibility = "visible";
                 document.querySelector("input").value = "";
                 const ul = document.querySelector("#ul");
                 const lis = document.querySelectorAll("#ul li");
                 const pokemonArr = [...lis];
+                console.log(ul);
                 
                 pokemonArr.map((pokemon)=>{
                     return pokemon.remove()
@@ -46,7 +54,9 @@ function onSubmit(event){
                 var i = 0;
                 data.types.map((currentType)=> {
                     const typePoke = document.createElement("span");
-                    typePoke.innerText = currentType.type.name;
+                    let upperCase = currentType.type.name;
+                    upperCase = upperCase.charAt(0).toUpperCase() + upperCase.slice(1);
+                    typePoke.innerText= upperCase;
                     newPokediv.appendChild(typePoke);
                     if(i == 0){
                         changeColor(currentType.type.name,newPoke);
@@ -90,7 +100,7 @@ function onSubmit(event){
                 }
         
                 if(data.id >= 650){
-                    const dex = document.querySelector("#background-pokemon");
+                   const dex = document.querySelector("#background-pokemon");
                     const newDex = document.createElement("img");
                     newDex.className = "pokedex";
                     newDex.setAttribute('src', `../assets/notfound.jpg`);
@@ -104,10 +114,14 @@ function onSubmit(event){
                     newDex.setAttribute('src', `../assets/pokedexon.jpg`);
                     dex.appendChild(newDex);
                 }
+
+                load.style.visibility = "hidden";
             }
+           
             return data
           
         });
+        
     }
     
 }

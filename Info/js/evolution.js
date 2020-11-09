@@ -5,11 +5,7 @@ let evolution = [];
 
 async function getContent(){
     try {
-        const response = await fetch('http://localhost:4567/',{
-            headers:{
-                Authorization: idPoke,
-            }
-        });
+        const response = await fetch(`http://localhost:4567/?idpoke=${idPoke}`);
         const [data] = await response.json();
         
         let pokeName = data.name;

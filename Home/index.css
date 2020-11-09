@@ -47,15 +47,15 @@ form #container-pokes{
     border: black 5px solid;
     border-radius: 10px;
     background-color: #d2c9c4;
-    min-width: 750px;
-    max-width: 750px
+    width: 600px;
 }
 form ul{
     overflow-y: auto;
-    max-height: 850px;
+    max-height: 520px;
     overflow-x: hidden;
     padding: 0px 10px;
     visibility: hidden;
+    min-height: 200px;
 }
 
 
@@ -79,11 +79,13 @@ form ul::-webkit-scrollbar-thumb {
 
 form ul .pokecard{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     list-style-type: none;
     margin: 10px 0;
     border-radius: 8px;
     padding: 10px 10px;
+    min-height: 180px;
     background-color: orange;
     
   
@@ -116,7 +118,6 @@ form ul .pokecard .pokeinfo span{
 
 
 form ul .pokeinfo{
-    margin-right: 200px;
     padding-left: 20px;
 
 }
@@ -129,18 +130,23 @@ form ul .pokeinfo p{
 }
 
 form ul  img{
-    min-width: 300px;
-    height: 200px;
-    max-width: 300px;
+    max-height: 150px;
+    max-width: 150px;
 }
 #background-pokemon{
     position: relative;
+    height: 50%;
+    width: 50%;
+}
+#background-pokemon img{
+    width: 70%;
+    margin-left: 20%;
 }
 #background-pokemon .imagepoke{
    position: absolute;
    transform: translate(-50%, -50%);
    top: 50%;
-   left: 50%;
+   left: 35%;
    min-width: 300px;
    height: 200px;
    max-width: 300px;   
@@ -154,8 +160,8 @@ form ul a{
 #load{
     
     position: absolute;
-    left: 950px;
-    top: 500px;
+    left: 50%;
+    top: 50%;
     z-index: 10;
     visibility: hidden;
     transition: visibility 1s ;
@@ -175,8 +181,8 @@ form ul a{
 
 #error{
     position: absolute;
-    left: 750px;
-    top: 400px;
+    left: 29%;
+    top: 50%;
     width: 600px;
     height: 200px;
     background-color: gray;
@@ -219,5 +225,106 @@ form ul a{
     margin-bottom: 45px;
     font-size: 32px;
     color: white;
+}
+
+header{
+    display: flex;
+    align-items: center;
+}
+
+header a{
+    color: black;
+    font-size: 26px;
+    text-decoration: none;
+}
+#back{
+    visibility: hidden;
+    margin-left: 250px;
+}
+#back img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    
+}
+
+@media only screen and (max-width: 720px){
+    main{
+        justify-content: center;
+        
+    }
+    #background-pokemon{
+        display: none;
+    }
+    #load{
+      
+        left: 0px;
+        border-radius: 10px;
+        background-color: grey;
+        align-items: center;
+        
+    }
+    
+}
+
+
+
+@media only screen and (max-width: 900px){
+    main{
+        justify-content: center;
+        
+    }
+    #background-pokemon{
+        display: none;
+    }
+    #load{
+        
+      
+        border-radius: 10px;
+        background-color: grey;
+        align-items: center;
+        left: 400px;
+    }
+      
+    
+}
+
+@media only screen and (max-width: 1080px){
+    main{
+        justify-content: center;
+        
+    }
+    #background-pokemon{
+        display: none;
+    }
+    #load{
+        
+        left: 500px;
+        border-radius: 10px;
+        background-color: grey;
+        align-items: center;
+       
+    }
+      
+}
+
+@media only screen and (max-width:1200px){
+    main{
+        justify-content: center;
+        
+    }
+    #background-pokemon{
+        display: none;
+    }
+    #load{
+        
+        left: 600px;
+        border-radius: 10px;
+        background-color: grey;
+        align-items: center;
+       
+    }
+      
+    
 }
 

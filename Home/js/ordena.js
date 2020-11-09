@@ -1,12 +1,13 @@
 
 let newArrPoke = [];
-let soma = 0;
+let contadorParaGerarPokes = 0;
 
 function ordenaPoke(newArrPoke){
     const load = document.querySelector("#load");
     let x  ;
+  
 
-    for(x= soma;x<newArrPoke.length;x++){
+    for(x= contadorParaGerarPokes;x<newArrPoke.length;x++){
 
         const ul = document.querySelector("#ul");
         const newPoke = document.createElement("li");
@@ -60,5 +61,5 @@ function ordenaPoke(newArrPoke){
     }  
     
     load.style.visibility = "hidden";
-    soma = soma + 30;            
+    contadorParaGerarPokes = contadorParaGerarPokes + 30;            
 };
