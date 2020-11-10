@@ -1,10 +1,9 @@
 
-function onSubmit(event){
+function search(event){
     event.preventDefault();
     var inputpoke = document.querySelector("input").value;
     let lowCase = inputpoke;
     lowCase = lowCase.toLowerCase();
-    console.log(lowCase);
     if(inputpoke.length == 0){
         showError(inputpoke.length,1);
     }
@@ -31,9 +30,13 @@ function onSubmit(event){
                 document.querySelector("input").value = "";
                 const ul = document.querySelector("#ul");
                 const lis = document.querySelectorAll("#ul li");
+                const todosLinks = document.querySelectorAll("#ul a");
+                const todosLinksArr = [...todosLinks];
                 const pokemonArr = [...lis];
-                console.log(ul);
-                
+
+                todosLinksArr.map((as) =>{
+                    return as.remove();
+                });
                 pokemonArr.map((pokemon)=>{
                     return pokemon.remove()
                 });

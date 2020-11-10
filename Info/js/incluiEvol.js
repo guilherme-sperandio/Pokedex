@@ -1,14 +1,11 @@
 
 const messageEvolution = document.querySelector("#message-evo");
 
-function incluiPoke(pokeArr){
-    console.log(pokeArr);
+function incluiEvolution(pokeArr){
     if(pokeArr == "Vaporeon/Jolteon/Flareon/Espeon/Umbreon/Leafeon/Glaceon/Sylveon" || pokeArr == "Slowbro/Slowking"){
-        console.log("a");
         pokeArr = arrumaArr(pokeArr);
     }
     if(pokeArr.length == 0){
-        console.log("pokemon sem evo");
         messageEvolution.style.display = "block";
     }
     else{

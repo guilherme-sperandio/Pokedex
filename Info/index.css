@@ -341,9 +341,7 @@ body{
     top: 15px;
     position: absolute;
     margin-left: 20px;
-    display: flex;
-    align-items: center;
-    width: 180px;
+    width: 160px;
     height: 30px;
     background-color: #a51b0b;
     border-radius: 5px;

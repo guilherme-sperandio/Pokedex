@@ -6,14 +6,14 @@ let evolution = [];
 async function getContent(){
     try {
         const response = await fetch(`https://backend-poke.herokuapp.com/?idpoke=${idPoke}`);
-        console.log("ok");
+        
         const [data] = await response.json();
         
         let pokeName = data.name;
         evolution.push(data.family.evolutionLine);
         verificaEvo(pokeName,evolution);
     } catch (error) {
-        console.log('errou');
+        
     }
 }
 
@@ -30,6 +30,6 @@ function verificaEvo(pokeName, pokeArr){
             
         }
     }
-    console.log(pokeArr[0]);
-    incluiPoke(pokeArr[0]);
+
+    incluiEvolution(pokeArr[0]);
 }

@@ -17,7 +17,6 @@ function arrumaArr(pokeArr){
         const poke2 = pokeArr[0].split('/')[1].trim();
         const newArr = [];
         newArr.push(poke1,poke2);
-        console.log(newArr);
         return newArr;
     }
    

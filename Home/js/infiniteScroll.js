@@ -9,9 +9,5 @@ ul.addEventListener('scroll', function() {
         else{
             return;
         }
-        console.log(ul.clientHeight);
-        console.log(ul.scrollTop );
-        console.log(ul.scrollHeight);
-        
     }
   });
