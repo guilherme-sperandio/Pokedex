@@ -5,7 +5,8 @@ let evolution = [];
 
 async function getContent(){
     try {
-        const response = await fetch(`http://localhost:4567/?idpoke=${idPoke}`);
+        const response = await fetch(`https://backend-poke.herokuapp.com/?idpoke=${idPoke}`);
+        console.log("ok");
         const [data] = await response.json();
         
         let pokeName = data.name;

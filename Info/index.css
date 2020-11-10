@@ -338,7 +338,8 @@ body{
     
 }
 #back{
-    margin-top: 10px;
+    top: 15px;
+    position: absolute;
     margin-left: 20px;
     display: flex;
     align-items: center;
