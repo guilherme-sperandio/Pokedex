@@ -238,14 +238,25 @@ header a{
     text-decoration: none;
 }
 #back{
+    
     visibility: hidden;
     margin-left: 250px;
+    width: 100px;
+    height: 30px;
+    background-color: #a51b0b;
+    border-radius: 5px;
+    box-shadow: 6px 7px 5px rgba(0, 0, 0, 0.5);  
 }
 #back img {
     width: 25px;
     height: 25px;
     margin-right: 10px;
+    margin-left: 5px;
     
+}
+#back:hover{
+    transform: scale(1.025);
+    transition: 0.3s;
 }
 
 @media only screen and (max-width: 720px){
